@@ -48,7 +48,7 @@ O conceito de login está no próprio nome, originado do termo em inglês loggin
  </figure>
 
  <figure>
-   <figcaption>Cadastro - Django <figcaption>
+   <h1>Cadastro - Django <h1>
    <img src="https://i.imgur.com/MImGPhN.png" title="Django" />
  </figure>
     
