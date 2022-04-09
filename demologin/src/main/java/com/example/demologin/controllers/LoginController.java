@@ -44,7 +44,7 @@ public class LoginController {
     }
 
 //spring
-    
+
     @GetMapping(value="/registration")
     public ModelAndView registration(){
         ModelAndView modelAndView = new ModelAndView();
@@ -80,6 +80,13 @@ public class LoginController {
         ModelAndView modelAndView = new ModelAndView();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.findUserByUserName(auth.getName());
+        if(user.getRole().getId() != 1){
+            modelAndView.setViewName("error");
+        }else{
+            modelAndView.addObject("userName", "Bem vindo, Nome de usuário: " + user.getUserName() + "/Nome: " + user.getName() + " " + user.getLastName() + ", Seu email:  (" + user.getEmail() + ")");
+            modelAndView.addObject("adminMessage","Conteúdo disponível apenas para usuários com função de administrador");
+            modelAndView.setViewName("admin/home");
+        }
         modelAndView.addObject("userName", "Bem vindo, Nome de usuário: " + user.getUserName() + "/Nome: " + user.getName() + " " + user.getLastName() + ", Seu email:  (" + user.getEmail() + ")");
         modelAndView.addObject("adminMessage","Conteúdo disponível apenas para usuários com função de administrador");
         modelAndView.setViewName("admin/home");
