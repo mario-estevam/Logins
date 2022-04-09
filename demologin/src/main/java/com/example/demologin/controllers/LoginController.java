@@ -43,7 +43,8 @@ public class LoginController {
         return modelAndView;
     }
 
-
+//spring
+    
     @GetMapping(value="/registration")
     public ModelAndView registration(){
         ModelAndView modelAndView = new ModelAndView();
