@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
     <title>Home - public</title>
@@ -8,6 +11,12 @@
 
 </head>
 <body>
+
+    <ul>
+        <li th:if="${papel == 1}" >  ADMIN </li>
+        <li th:if="${papel == 2}" > <a th:href="@{/professor/home}"> PROFESSOR </a>  </li>
+    </ul>
+
 <div style="padding-left: 40%; padding-top: 8%">
     <div class="card" style="width: 18rem;">
         <div class="card-body">

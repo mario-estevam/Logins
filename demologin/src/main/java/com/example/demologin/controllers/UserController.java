@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 
 @Controller
-public class LoginController {
+public class UserController {
 
     @Autowired
     private UserService userService;
@@ -35,6 +35,7 @@ public class LoginController {
         User user = userService.findUserByUserName(auth.getName());
         if(user != null){
             modelAndView.addObject("userName", "Bem vindo, Nome de usuário: " + user.getUserName() + "/Nome: " + user.getName() + " " + user.getLastName() + ", Seu email:  (" + user.getEmail() + ")");
+            modelAndView.addObject("papel", user.getRole().getId());
         }else{
             modelAndView.addObject("userName", "Nenhum usuário logado no sistema");
         }
@@ -87,9 +88,25 @@ public class LoginController {
             modelAndView.addObject("adminMessage","Conteúdo disponível apenas para usuários com função de administrador");
             modelAndView.setViewName("admin/home");
         }
-        modelAndView.addObject("userName", "Bem vindo, Nome de usuário: " + user.getUserName() + "/Nome: " + user.getName() + " " + user.getLastName() + ", Seu email:  (" + user.getEmail() + ")");
-        modelAndView.addObject("adminMessage","Conteúdo disponível apenas para usuários com função de administrador");
         modelAndView.setViewName("admin/home");
+        return modelAndView;
+    }
+
+    @GetMapping(value="/professor/home")
+    public ModelAndView homeProfessor(){
+        ModelAndView modelAndView = new ModelAndView();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        User user = userService.findUserByUserName(auth.getName());
+        if(user.getRole().getId() != 1){
+            modelAndView.setViewName("error");
+        }else{
+            modelAndView.addObject("userName", "Bem vindo, Nome de usuário: " + user.getUserName() + "/Nome: " + user.getName() + " " + user.getLastName() + ", Seu email:  (" + user.getEmail() + ")");
+            modelAndView.addObject("adminMessage","Conteúdo disponível apenas para usuários com função de administrador");
+            modelAndView.setViewName("professor/home");
+        }
+        modelAndView.addObject("userName", "Bem vindo, Nome de usuário: " + user.getUserName() + "/Nome: " + user.getName() + " " + user.getLastName() + ", Seu email:  (" + user.getEmail() + ")");
+        modelAndView.addObject("adminMessage","Conteúdo disponível apenas para usuários com função de professor");
+        modelAndView.setViewName("professor/home");
         return modelAndView;
     }
 
