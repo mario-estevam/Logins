@@ -62,6 +62,18 @@ O conceito de login está no próprio nome, originado do termo em inglês loggin
    <img src="https://i.imgur.com/blGaY0f.png" title="Django" />
  </figure>
     
+ # Ferramentas dos frameworks utilizadas
+    <li> Para o projeto em django foi utilizada a biblioteca django-allauth </li>
+    <li> Para o projeto em Laravel foi utilizada a biblioteca Laravel UI </li>
+    <li> Para o projeto em Spring foi utilizada a dependência Spring Security </li>
+    
+ # Considerações finais
+    
+    <li> Particarmente tenho mais afinidade com Spring e com Laravel, então foram os que mais gostei :p </li>
+    <li> O laravel utilazando Laravel UI tornou o projeto mais pesado por fazer uso de recursos do npm, node modules etc </li>
+    <li> Gostei de implementar o projeto em django, mesmo não tendo tanta afinidade com o framework não tive dificuldades para implementar </li>
+    <li> Gosto da liberdade que o java dá, então na utilização do Spring Security foi onde pude entender melhor do funcionamento do sistema e como as coisas funcionam, tendo em vista que nos outros frameworks as coisas já vem "prontas" demais </li>
+    
     
     
     
