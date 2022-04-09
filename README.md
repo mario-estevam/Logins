@@ -33,32 +33,32 @@ O conceito de login está no próprio nome, originado do termo em inglês loggin
 # Telas
  
  <figure>
-   <figcaption>Login - PHP<figcaption>
+   <h2>Login - PHP<h2>
    <img src="https://i.imgur.com/p6WHkAb.png" title="PHP" />
  </figure>
   
  <figure>
-   <figcaption>Cadastro - PHP<figcaption>
+   <h2>Cadastro - PHP<h2>
    <img src="https://i.imgur.com/Mls3ihn.png" title="PHP" />
  </figure>
     
  <figure>
-   <figcaption>Login - Django<figcaption>
+   <h2>Login - Django<h2>
    <img src="https://i.imgur.com/Ft4nsOZ.png" title="Django" />
  </figure>
 
  <figure>
-   <h1>Cadastro - Django <h1>
+   <h2>Cadastro - Django <h2>
    <img src="https://i.imgur.com/MImGPhN.png" title="Django" />
  </figure>
     
  <figure>
-   <figcaption>Login - Spring<figcaption>
+   <h2>Login - Spring<h2>
    <img src="https://i.imgur.com/0FvRHmm.png" title="Django" />
  </figure>
 
  <figure>
-   <figcaption>Cadastro - Spring <figcaption>
+   <h2>Cadastro - Spring <h2>
    <img src="https://i.imgur.com/blGaY0f.png" title="Django" />
  </figure>
     
