@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring Security Tutorial</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+
+
+<div class="container" style="padding: 55px">
+
+    <div class="card mb-3" >
+        <div style="position: absolute; padding-left: 80%;padding-top: 2%">
+            <form th:action="@{/registration}" method="get">
+                <button class="btn btn-md btn-warning btn-block" type="Submit">Cadastrar usuário</button>
+            </form>
+        </div>
+        <form th:action="@{/login}" method="POST" class="form-signin" style="padding: 50px">
+            <h3 class="form-signin-heading" style="padding-left: 10px"  th:text="Bem-vindo"></h3>
+            <br/>
+            <input type="text" id="user_name" name="user_name" placeholder="Nome de usuário"
+                   class="form-control"/> <br/>
+            <input type="password" th:placeholder="Senha"
+                   id="password" name="password" class="form-control"/> <br/>
+
+            <div align="center" th:if="${param.error}">
+                <p style="font-size: 20px; color: #FF1C19;">Nome de usuário ou senha, inválidos</p>
+            </div>
+            <div style="padding-left:40%; padding-right: 40%">
+                <button class="btn btn-lg btn-primary btn-block" name="Submit" value="Login" type="Submit"
+                        th:text="Login"></button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+</body>
+</html>

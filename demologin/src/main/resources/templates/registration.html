@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<div class="container">
+
+
+
+            <div class="card mb-3" style="margin: 10%">
+
+
+            <form autocomplete="off" action="#" th:action="@{/registration}"
+                  th:object="${user}" method="post" class="form-horizontal"
+                  role="form">
+                <div style="padding-left: 25%">
+
+
+                <h2 style="position: center; padding-left: 20%; padding-top: 10px">Cadastrar usuario</h2>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                               class="validation-message text-danger"></label>
+                        <input type="text" th:field="*{name}" placeholder="Nome"
+                               class="form-control"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <label th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"
+                               class="validation-message text-danger"></label>
+                        <input type="text" th:field="*{lastName}"
+                               placeholder="Sobrenome" class="form-control"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{email}" placeholder="Email"
+                               class="form-control"/> <label
+                            th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                            class="validation-message text-danger"></label>
+                    </div>
+                </div>
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <label> Tipo de usuário:</label>
+                            <select id="role" th:field="*{role}">
+                                <option th:value="1">USER</option>
+                                <option th:value="2">ADMIN</option>
+                            </select>
+                        </div>
+                    </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <input type="text" th:field="*{userName}" placeholder="Nome de usuário"
+                               class="form-control"/> <label
+                            th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"
+                            class="validation-message text-danger"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <input type="password" th:field="*{password}"
+                               placeholder="Senha" class="form-control"/> <label
+                            th:if="${#fields.hasErrors('password')}" th:errors="*{password}"
+                            class="validation-message text-danger"></label>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-sm-9">
+                        <button type="submit" class="btn btn-primary btn-block">Cadastrar usuário</button>
+
+                    </div>
+                </div>
+
+                <h2><span class="text-success" th:utext="${successMessage}"></span></h2>
+                </div>
+
+            </form>
+
+                <form th:action="@{/}" method="get" style=" margin: 20px; ">
+                    <button class="btn btn-md btn-warning btn-block" type="Submit">Voltar para Login</button>
+                </form>
+            </div>
+
+</div>
+
+</body>
+</html>
